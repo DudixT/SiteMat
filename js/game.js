@@ -57,4 +57,6 @@ function verificaResposta() {
         document.getElementById("resultado").innerText = 'Errado! a reposta Correta era ${respostaCorreta}';
         pontuacao -=5;
     }
+
+    document.getElementById("pontuacao").innerText = pontuacao;
 }
