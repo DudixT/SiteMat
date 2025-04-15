@@ -34,3 +34,27 @@ function gerarNumeros(modo) {
     return {num1, num2};
 }
 
+function escolherOperacao() {
+    const operacoes = ['+', '-', '*'];
+    return operacoes[Math.floor(Math.random() * operacoes.length)];
+}
+
+function calcularResposta(n1, n2, op) {
+    switch (op) {
+        case '+': return n1 + n2;
+        case '-': return n1 - n2;
+        case '*': return n1 * n2;
+    }
+}
+
+function verificaResposta() {
+    const respostaUsuario = parseInt(document.getElementById("resposta").value);
+
+    if (respostaUsuario === respostaCorreta) {
+        document.getElementById("resultado").innerText = "Resposta Correta!";
+        pontuacao +=10;
+    } else {
+        document.getElementById("resultado").innerText = 'Errado! a reposta Correta era ${respostaCorreta}';
+        pontuacao -=5;
+    }
+}
